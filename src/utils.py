@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 import dill
 from pathlib import Path
+
+from sklearn.metrics import r2_score
 sys.path.append(str(Path(__file__).parent.parent))
 from exception import CustomException
 from logger import logging
@@ -19,3 +21,21 @@ def save_object(file_path,obj):
 
     except Exception as e:
         raise CustomException(e,sys)
+    
+def evaluate_model(X_train, y_train, X_test, y_test, models):
+    try:
+        report = {}
+        for model_name, model_instance in models.items():
+            model_instance.fit(X_train, y_train)
+
+            y_train_pred = model_instance.predict(X_train)
+            y_test_pred = model_instance.predict(X_test)
+
+            train_model_accuracy = r2_score(y_train, y_train_pred)
+            test_model_accuracy = r2_score(y_test, y_test_pred)
+
+            report[model_name] = test_model_accuracy
+        logging.info('Model Accuracy report Generated SUCCESSFULLY')
+        return report
+    except Exception as e:
+        raise CustomException(e, sys)

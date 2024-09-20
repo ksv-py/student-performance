@@ -8,6 +8,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 from exception import CustomException
 from logger import logging
 from components.data_transformation import DataTransformation
+from components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -55,4 +56,6 @@ if __name__ == "__main__":
     train_data, test_data = obj.initiate_data_ingestion()
 
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr, test_arr=data_transformation.initiate_data_transformation(train_data,test_data)
+    modeltrainer = ModelTrainer()
+    print(f'Model Accuracy: {modeltrainer.initiate_model_training(train_arr,test_arr)}')

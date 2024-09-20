@@ -62,6 +62,7 @@ class DataTransformation:
         
     def initiate_data_transformation(self, train_path, test_path):
         try:
+            logging.info("Initiating Data Transformation")
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
 
@@ -90,7 +91,7 @@ class DataTransformation:
             # Save the preprocessor object
             save_object(file_path=self.data_transformation_config.preprocessor_obj_file_path, obj=preprocessing_obj)
 
-            return train_arr, test_arr, self.data_transformation_config.preprocessor_obj_file_path
+            return train_arr, test_arr
 
         except Exception as e:
             raise CustomException(e, sys)
