@@ -36,26 +36,28 @@ The Student Performance Prediction project is built using Flask for the web inte
 - **HTML/CSS**: For designing the web interface.
 
 ## Project Structure
-. ├── src
-  │ ├── pipeline 
-  │ │   ├── predict_pipeline.py # Prediction pipeline and data handling classes 
-  │ │   ├── train_pipeline.py # Model training pipeline 
-  │ ├── components 
-  │ │   ├── data_ingestion.py # Handles data loading 
-  │ │   ├── data_preprocessing.py # Data preprocessing logic 
-  │ │   ├── model_trainer.py # Model training and evaluation 
-  │ ├── utils.py # Utility functions (load/save models, etc.) 
-  │ ├── exception.py # Custom exception handling 
-  │ ├── logger.py # Logging configurations 
-  ├── templates 
-  │     ├── index.html # Home page of the application 
-  │     ├── home.html # Form to input student data for prediction 
-  ├── artifacts 
-  │    ├── model.pkl # Trained model file 
-  │    ├── preprocessor.pkl # Preprocessing object 
-  ├── app.py # Main application file 
-  ├── README.md # Project documentation 
-  ├── requirements.txt # List of dependencies
+  ```
+  . ├── src
+    │ ├── pipeline 
+    │ │   ├── predict_pipeline.py # Prediction pipeline and data handling classes 
+    │ │   ├── train_pipeline.py # Model training pipeline 
+    │ ├── components 
+    │ │   ├── data_ingestion.py # Handles data loading 
+    │ │   ├── data_preprocessing.py # Data preprocessing logic 
+    │ │   ├── model_trainer.py # Model training and evaluation 
+    │ ├── utils.py # Utility functions (load/save models, etc.) 
+    │ ├── exception.py # Custom exception handling 
+    │ ├── logger.py # Logging configurations 
+    ├── templates 
+    │     ├── index.html # Home page of the application 
+    │     ├── home.html # Form to input student data for prediction 
+    ├── artifacts 
+    │    ├── model.pkl # Trained model file 
+    │    ├── preprocessor.pkl # Preprocessing object 
+    ├── app.py # Main application file 
+    ├── README.md # Project documentation 
+    ├── requirements.txt # List of dependencies
+  ```
 
 ## Setup Instructions
 
